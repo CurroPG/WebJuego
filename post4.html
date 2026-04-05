@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoNBrawL - Salón de la fama</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .article-container { max-width: 800px; margin: 4rem auto; background: rgba(26, 16, 37, 0.9); padding: 3rem; border-radius: 12px; border: 1px solid var(--neon-purple); box-shadow: 0 0 20px rgba(229, 0, 255, 0.15); }
+        .article-header { text-align: center; margin-bottom: 2rem; }
+        .article-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
+        .article-content { color: var(--text-main); font-size: 1.15rem; line-height: 1.9; font-family: 'Fira Code', monospace; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { color: var(--neon-green); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.8rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <h2 class="text-neon-green" style="margin:0;">⚡ NeoNBrawL</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="blog.html" class="text-neon-green">Blog</a></li>
+            <li><a href="about.html">Portfolio Page</a></li>
+        </ul>
+        <a href="https://cucupg.itch.io/neonbrawl" target="_blank">
+            <button class="play-btn bg-neon-purple">JUGAR AHORA</button>
+        </a>
+    </nav>
+
+    <div class="article-container">
+        <div class="article-header">
+            <h1 class="text-neon-purple" style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem;">Salón de la fama: Conectando el neón al mundo real con Supabase</h1>
+            <p style="color: var(--text-dim);">Por Curro Portillo Guerrero | 2 de Abril de 2026</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1200&auto=format&fit=crop" alt="Database Code" class="article-image">
+        
+        <div class="article-content">
+            <p>Jugar para superarte a ti mismo mola y pica mucho, pero seamos honestos: la raza humana es competitiva por naturaleza. En cuanto tuve la mecánica de supervivencia pulida y mis amigos empezaron a jugarlo, la pregunta que no paraba de sonar en las conversaciones del recreo era: <em>"Oye Curro, ¿cuánto es tu récord de tiempo aguantado?"</em></p>
+            <p>Tener que responder por WhatsApp no era nada profesional. Así que me propuse un reto enorme a nivel técnico para mí: saltar del cómodo HTML/JS de cliente e implementar un <strong>Leaderboard Global</strong> real conectado a una base de datos en la nube.</p>
+            
+            <h2>De bases de datos locales al poder moderno</h2>
+            <p>En clase de Bases de Datos en Antequera habíamos visto MySQL y cosas por el estilo, pero para un proyecto web estático desplegado en Vercel o itch.io, yo necesitaba algo tipo "BaaS" (Backend as a Service). Es ahí cuando descubrí Supabase. Para los que no lo conozcan, es básicamente una alternativa libre al famoso Firebase, basada en la robusta PostgreSQL pero con una API RESTful que puedes consultar directo desde JavaScript. Una locura de herramienta.</p>
+            
+            <h2>Protegiendo el Salón de la Fama</h2>
+            <p>Programar el POST de los datos (tu nombre, tu tiempo sobrevivido y los enemigos aniquilados) fue la parte fácil. La pesadilla real empezó cuando se me ocurrió que un jugador espabilado podría simplemente abrir la consola integrada de su navegador, manipular la variable `score` antes de morir y enviar "9.999.999" puntos destrozando mi hermoso leaderboard en el acto.</p>
+            <p>Esta preocupación por la seguridad me hizo pensar fuera de la caja. Acabé implementando un sistema de cifrado muy básico y comprobaciones lógicas donde el servidor (en este caso validadores de RLS en Supabase) descarta récords inhumanamente imposibles según el tiempo delta de la partida real enviada junto con los puntos.</p>
+            
+            <h2>Todo el mundo en mi pantalla</h2>
+            <p>El día que hice <em>Git Push</em> y probamos la integración fue muy loco. Estar sentado en mi escritorio, jugar una partida, actualizar el tablero e inmediatamente ver cómo un jugador con el nick "Kira45" desde la otra punta de España desplazaba mi récord de primer puesto en tiempo real es una sensación indudablemente satisfactoria. Me demostró que NeoNBrawL no era solo un bloque de código aislado en mi portátil, sino una pequeña comunidad conectada a través de un servidor. Ahora sí... ¡el reto es global!</p>
+        </div>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="blog.html" style="color: var(--neon-green); text-decoration: underline;">← Volver a la Bitácora</a>
+        </div>
+    </div>
+</body>
+</html>

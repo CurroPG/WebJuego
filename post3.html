@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoNBrawL - El sistema de mejoras</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .article-container { max-width: 800px; margin: 4rem auto; background: rgba(26, 16, 37, 0.9); padding: 3rem; border-radius: 12px; border: 1px solid var(--neon-purple); box-shadow: 0 0 20px rgba(229, 0, 255, 0.15); }
+        .article-header { text-align: center; margin-bottom: 2rem; }
+        .article-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
+        .article-content { color: var(--text-main); font-size: 1.15rem; line-height: 1.9; font-family: 'Fira Code', monospace; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { color: var(--neon-green); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.8rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <h2 class="text-neon-green" style="margin:0;">⚡ NeoNBrawL</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="blog.html" class="text-neon-green">Blog</a></li>
+            <li><a href="about.html">Portfolio Page</a></li>
+        </ul>
+        <a href="https://cucupg.itch.io/neonbrawl" target="_blank">
+            <button class="play-btn bg-neon-purple">JUGAR AHORA</button>
+        </a>
+    </nav>
+
+    <div class="article-container">
+        <div class="article-header">
+            <h1 class="text-neon-purple" style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem;">Crecer tras morir: Metaprogresión, cofres y el valor del píxel</h1>
+            <p style="color: var(--text-dim);">Por Curro Portillo Guerrero | 28 de Marzo de 2026</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1200&auto=format&fit=crop" alt="Progresión Retro" class="article-image">
+        
+        <div class="article-content">
+            <p>Morir en un videojuego suele ser frustrante. Cuando empecé a prototipar la primera versión web de <strong>NeoNBrawL</strong> y me di cuenta de lo implacable que estaba siendo con la dificultad (esas oleadas no perdonan), me percaté de un gran problema: la gente cerraba la pestaña al morir por quinta vez. Hacía falta un incentivo, un motivo para darle al botón de reiniciar. Así me adentré en el maravilloso pero complejo mundo de la metaprogresión roguelite.</p>
+            
+            <h2>La economía del neón</h2>
+            <p>Para solucionar esto, decidí crear un sistema de economía interna. Cada enemigo derrotado tenía una probabilidad dictada matemáticamente de "soltar" pequeños fragmentos luminosos que actúan como moneda virtual dentro del juego. Implementar esto en JavaScript me llevó a estudiar gestión del estado (estado global vs local) y cómo asegurar que, incluso si refrescas la página, no pierdas tus preciadas monedas.</p>
+            <p>Usé el almacenamiento del navegador (localStorage) para guardar pequeñas variables cifradas que representan todo el progreso del jugador entre partidas. A nivel de código puede sonar trivial para un senior, pero para un chaval de primer año de DAM en Antequera, la sensación de cerrar el navegador, volver a abrirlo y ver tu monedero intacto fue casi como hacer magia negra.</p>
+            
+            <h2>Cofres y Power-Ups: La adicción sana</h2>
+            <p>Tener dinero virtual no sirve de nada si no puedes gastarlo. Diseñé una tienda interna entre las oleadas donde puedes usar esas retinas luminosas. Aquí entra la verdadera gracia de la metaprogresión de NeoNBrawL: la compra de cofres de loot. Opté por un sistema de azar para darle emoción; nunca sabes si el cofre te dará un ridículo aumento del 1% de velocidad o un cañón de plasma definitivo.</p>
+            <p>Programar el algoritmo detrás del dropeo de los cofres fue pura estadística. Asigné pesos y <em>arrays</em> de probabilidad a unos JSON que la lógica de la tienda invoca. A veces la tienda se vuelve "loca", y eso era precisamente lo que quería: que si tienes suerte un martes por la tarde en tu habitación, te sientas imparable en la arena táctica.</p>
+            <p>Implementar mejoras permanentes ha equilibrado mi juego maravillosamente. Ahora la muerte no es el final de la partida, es simplemente el paso previo para ir a la tienda a comprar ese propulsor que necesitas para reventar tu propio récord en la siguiente pasada.</p>
+        </div>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="blog.html" style="color: var(--neon-green); text-decoration: underline;">← Volver a la Bitácora</a>
+        </div>
+    </div>
+</body>
+</html>

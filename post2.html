@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoNBrawL - Orquestando el caos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .article-container { max-width: 800px; margin: 4rem auto; background: rgba(26, 16, 37, 0.9); padding: 3rem; border-radius: 12px; border: 1px solid var(--neon-purple); box-shadow: 0 0 20px rgba(229, 0, 255, 0.15); }
+        .article-header { text-align: center; margin-bottom: 2rem; }
+        .article-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
+        .article-content { color: var(--text-main); font-size: 1.15rem; line-height: 1.9; font-family: 'Fira Code', monospace; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { color: var(--neon-green); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.8rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <h2 class="text-neon-green" style="margin:0;">⚡ NeoNBrawL</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="blog.html" class="text-neon-green">Blog</a></li>
+            <li><a href="about.html">Portfolio Page</a></li>
+        </ul>
+        <a href="https://cucupg.itch.io/neonbrawl" target="_blank">
+            <button class="play-btn bg-neon-purple">JUGAR AHORA</button>
+        </a>
+    </nav>
+
+    <div class="article-container">
+        <div class="article-header">
+            <h1 class="text-neon-purple" style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem;">Orquestando el caos: Diseñando 6 inteligencias para la Arena</h1>
+            <p style="color: var(--text-dim);">Por Curro Portillo Guerrero | 21 de Marzo de 2026</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop" alt="Diseño de Enemigos" class="article-image">
+        
+        <div class="article-content">
+            <p>Hola de nuevo, sobrevivientes de la arena. Si alguna vez habéis jugado un título de supervivencia, sabéis que todo se resume en una única cosa: la presión constante a la que te somete la inteligencia enemiga. En <strong>NeoNBrawL</strong>, yo no quería tener los típicos enemigos de "zombi-básico" que simplemente se mueven hacia ti en línea recta y se atascan en las esquinas. Yo quería sudar.</p>
+            
+            <h2>De la teoría al código: Sistemas de Oleadas</h2>
+            <p>Para conseguir que el juego escale su dificultad de forma divertida y no injusta, diseñé un gestor central de oleadas. Básicamente, no genero enemigos de forma aleatoria todo el rato. El código cuenta con un temporizador maestro que, dictado por funciones matemáticas de incremento acelerado, sube el límite de monstruos en pantalla conforme matas a ciertas unidades o el contador baja a cero.</p>
+            <p>Diseñar esto siendo estudiante de primero en Antequera, me hizo quemar pestañas peleándome con bucles infinitos por culpa de <code>requestAnimationFrame</code>. Pero la sensación cuando logré que la primera oleada de píxeles me acorralara fue espectacular.</p>
+            
+            <h2>Los 6 Jinetes del Neón</h2>
+            <p>Aquí es donde entra la diversión pura y dura: diseñar comportamientos. En lugar de hacer que cambien solo de color o tengan más barra de vida, cada uno de los 6 tipos de enemigos implementados posee una lógica de <em>pathfinding</em> e IA rudimentaria dictada por JavaScript:</p>
+            <ul>
+                <li style="margin-bottom: 10px;"><strong>Los Trackers (Rastreadores):</strong> El enemigo más veloz. Calculan no dónde estás tú, sino hacia dónde te diriges utilizando vectores básicos de velocidad.</li>
+                <li style="margin-bottom: 10px;"><strong>Tanks (Tanques de Neón):</strong> Lentos, masivos, imponentes. Tienen un escudo impenetrable frontal que te obliga a pensar tácticamente y flanquearlos.</li>
+                <li style="margin-bottom: 10px;"><strong>Kamikaze:</strong> Huyen del jugador hasta que se ven sobrepasados, momento en el que explotan causando daño en un área enorme.</li>
+                <li style="margin-bottom: 10px;">Y otros 3 tipos que os dejaré descubrir por las malas mientras os bajan la barra de vida...</li>
+            </ul>
+            
+            <h2>A la IA se la controla, nunca se la domina</h2>
+            <p>A pesar de que soy yo quien ha tecleado las normas bajo las que se rigen estos elementos, hay momentos en la arena en que las sinergias entre los 6 tipos me superan de maneras que ni yo mismo como creador imaginé. He muerto un montón testeando mi propio juego porque un "Tank" me bloqueaba mientras un "Kamikaze" me reventaba la espalda.</p>
+            <p>Este sistema me hace sentirme súper orgulloso del lado lógico que se esconde detrás de la pantalla negra y los destellos. Mi viaje en la programación apenas acaba de empezar, pero ver mi código vivo y "enfadado" intentándome dar caza es mi mayor medalla hasta ahora.</p>
+        </div>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="blog.html" style="color: var(--neon-green); text-decoration: underline;">← Volver a la Bitácora</a>
+        </div>
+    </div>
+</body>
+</html>
